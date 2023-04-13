@@ -101,7 +101,7 @@ a {
   0 0 82px #eef1f1;
   }
 
-  /*Стили основного контента*/
+/*Стили основного контента*/
   .main-content {
     min-height: 100%;
   }
@@ -145,8 +145,9 @@ a {
     opacity: 1;
   }
 
+
+/*При наведении*/
   .cat_card:hover {
-    /*наведение на карточку*/
     border: 2px solid var(--bg-color);
     box-shadow:  0 0 7px #1d1b1b, 0 0 82px #81c9df;
   }
@@ -230,7 +231,7 @@ a {
     0 0 82px #81c9df;
   }
 
-  /* Модальное окно - добавить кота"*/
+/* Модальное окно - добавить кота"*/
   .create_edit_modal_form {
     display: none;
   }
@@ -351,7 +352,7 @@ a {
     0 0 82px #81c9df;
   }
 
-  /*Модальное окно- Посмотреть кота*/
+/*Модальное окно- Посмотреть кота*/
   .cardView_popup {
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
@@ -439,7 +440,7 @@ a {
     0 0 82px #81c9df;
   }
 
-  /*подвал*/
+/*подвал*/
   .footer {
     width: 100%;
     height: 70px;
@@ -494,53 +495,19 @@ a {
 
 /*Адаптив мобилки*/
 /* 
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
   @media (max-width: 720px) {
     header {
       padding: 10px;
     }
-  
-    .header__logo {
-      height: 20px;
-    }
-  
-    header a {
-      margin-right: 10px;
-    }
-  
-    .about {
-      flex-direction: column-reverse;
-      padding: 100px 10px 50px;
-    }
-  
-    .about h1 {
-      font-size: 36px;
-      line-height: 40px;
-    }
-  
-    .about__image {
-      width: 280px;
-    }
-  
-    .about__sun-image {
-      width: 75px;
-      height: 75px;
-    }
-  
-    .form {
-      padding: 50px 10px;
-    }
-    .snow {
-      width: 100%;
-    }
-    .form h1 {
-      font-size: 36px;
-    }
-  
-    footer {
-      padding: 50px 10px;
-    }
-  
-    .footer__container {
-      flex-direction: column;
-    } 
+...
     */

@@ -34,15 +34,15 @@ const generateCard = (cat) => {
                         <label for="image">Изображение</label> <br />
                         <input id="image" name="image" placeholder="Вставьте изображение"/><br />
                         <label for="age">Возраст</label>  <br />
-                        <input id="age" name="age" type="number" placeholder="Возраст" /> <br />
+                        <input id="age" name="age" type="number" placeholder="Возраст" min="0" max="30" /> <br />
                         <label for="rate">Рейтинг</label>  <br />
                         <input id="rate" name="rate" type="number" placeholder="Рейтинг" min="0" max="5" /> <br />
                         <label for="favorite">Любимчик</label>
                         <input type="checkbox" id="favorite" name="favorite"/><br />
                         <label>Описание</label> <br />
                         <textarea id="description" name="description" rows="3" placeholder="Описание"></textarea><br/>
-                        <button type="submit" class="button_form_submit"></button>
-                        <button type="reset" class="button_form_close"></button>
+                        <button type="submit" class="button_form_submit" data-tooltip="Добавить"></button>
+                        <button type="reset" class="button_form_close" data-tooltip="Закрыть"></button>
                     </form>
                 </div>`;
     };
@@ -62,8 +62,7 @@ const generateCard = (cat) => {
         </div>
         </div>
     </div>`;
-        };
-
+};
 
 const refreshCats = () => {
 content.innerHTML = '';

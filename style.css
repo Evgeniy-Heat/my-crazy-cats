@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,17 +9,15 @@ body {
   --bg-color: rgb(62, 185, 185);
   background-color: white;
   height: 100vh;
-  box-sizing: border-box;
-}
+  }
 
 ul {
   list-style-type: none;
-}
+  }
 
 a {
   text-decoration: none;
-}
-
+  }
 
 /*Шапка*/
 .header {
@@ -35,46 +37,70 @@ a {
   justify-content: space-between;
   margin-right: auto;
   margin-left: auto;
-}
-
+  }
 
 .logoPanel {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .logo {
   width: 50px;
   height: 50px;
-}
+  }
+
 .logoPanel p {
   margin-left: 20px;
   color: black;
   font-size: 26px;
   font-weight: 700;
-}
+  }
 
 .add {
   position: relative;
   width: 40px;
   height: 40px;
-  background-image: url('./../images/add.png');
+  background-image: url('images/add.png');
   background-size: contain;
   border: none;
   background-color: var(--bg-color);
-}
+  }
+
+.add:hover {
+  background-color: var(--bg-color);
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 60%;
+  border: none;
+  color: #fff;
+  box-shadow:  0 0 7px rgb(151, 229, 231),
+  0 0 42px rgb(139, 240, 243),
+  0 0 82px #e6f9ff;
+  }
 
 .update {
   position: relative;
   width: 40px;
   height: 40px;
-  background-image: url('./../images/update.svg');
+  background-image: url('images/update.svg');
   background-size: contain;
-  border: none;
+  border-radius: 50%;
   background-color: rgb(62, 185, 185);
   margin-left: 60px;
   margin-right: 20px;
-}
+  }
+
+.update:hover {
+  background-color: var(--bg-color);
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  box-shadow:  0 0 7px rgb(193, 199, 199),
+  0 0 42px rgb(223, 230, 230),
+  0 0 82px #eef1f1;
+  }
+
   /*Стили основного контента*/
   .main-content {
     min-height: 100%;
@@ -89,8 +115,8 @@ a {
     position: relative;
     height: 100%;
   }
+
   .cat_card {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,43 +126,67 @@ a {
     padding: 15px;
   }
 
+  [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 0;
+    border: 1px solid grey;
+    background-color: #fff;
+    color: var(--bg-color);
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+  }
+
+  [data-tooltip]:hover::after {
+    top: 3em;
+    left: -15px;
+    opacity: 1;
+  }
+
   .cat_card:hover {
     /*наведение на карточку*/
     border: 2px solid var(--bg-color);
     box-shadow:  0 0 7px #1d1b1b, 0 0 82px #81c9df;
-
   }
+
   .cat_card_image {
     width: 100%;
     height: 100%;
     margin-bottom: 15px;
     position: relative;
   }
-  .cat_card_image > img {
+
     /*картинка внутри карточки*/
+  .cat_card_image > img {
     width: inherit;
     height: inherit;
     border-radius: 20px;
   }
+
   .cat_card p {
     margin: 0;
     padding: 0;
     line-height: 2;
   }
+
   .cat_description{
     font-size: 16px;
     color: #b4b4b4;
-
   }
+
   .cat_name {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
     color:black;
   }
+
   .cat_favorite {
     display: none;
-}
+  }
+
   .cat_favorite.activity {
     position: absolute;
     display: block;
@@ -148,11 +198,13 @@ a {
   .cat_favorite.activity > img {
     width: 60px;
     height: 60px;
-}
+  }
+
   .cat_card_btns {
     margin-top: 20px;
     margin-bottom: 30px;
   }
+
   .cat_card_btns > button {
     background-color:#fff;
     font-weight: 600;
@@ -163,6 +215,7 @@ a {
     padding: 5px;
     border-radius: 10px;
   }
+
   .cat_card_btns > button:hover {
     background-color: var(--bg-color);
     font-weight: 700;
@@ -172,13 +225,13 @@ a {
     0 0 42px rgb(74, 185, 189),
     0 0 82px #81c9df;
   }
+
   /* Модальное окно - добавить кота"*/
   .create_edit_modal_form {
     display: none;
   }
+
   .active {
-    background-color: #0008;
-    backdrop-filter: blur(2px);
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -188,16 +241,20 @@ a {
     color:#ffffff;
     top: 20%;
     left: 30%;
-    background-color: rgb(0, 0, 0);
-    box-shadow:  0 0 7px #a0a09f, 0 0 10px #f3edd9;
+    background-color: rgb(74, 185, 189);
+    box-shadow:    0 0 7px rgb(60, 150, 153),
+    0 0 42px rgb(74, 185, 189),
+    0 0 82px #81c9df;
     border-radius: 15px;
     z-index: 100;
   }
+
   .create_edit_modal_title {
     display: flex;
     align-self: center;
     margin:2% auto;
-}
+    color:#000000;
+  }
 
 
 
@@ -220,12 +277,12 @@ a {
     padding-left: 20px;
     border-radius: 15px;
     cursor: pointer;
-    }
+  }
 
     #favorite {
     width: 50px;
     margin-top: 10px;
-    }
+  }
 
   .modal_form > textarea {
     border:none;
@@ -236,32 +293,60 @@ a {
     resize:vertical;
     border-radius: 20px;
   }
+
   .button_form_submit {
     display: block;
-    width: 200px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
     margin:0 auto;
-    background-image: url("images/OK.gif");
-    background-color: #000000;
+    background-image: url("images/ok.svg");
+    background-color: rgb(190, 238, 238);
     background-size:contain;
     background-repeat: no-repeat;
     background-position:center;
-    border-radius: 20px;
+    position: absolute;
+    top: 88%;
+    right: 45%;
+    border-radius: 50%;
+    border: none;
     cursor: pointer;
   }
+
+  .button_form_submit:hover {
+    background-color: var(--bg-color);
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    box-shadow:  0 0 7px rgb(193, 199, 199),
+    0 0 42px rgb(223, 230, 230),
+    0 0 82px #eef1f1;
+  }
+
   .button_form_close {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-image: url('images/close.gif');
+    background-image: url('images/close.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
     position: absolute;
     cursor: pointer;
+    border: none;
     top: -15px;
     right: -20px;
   }
+
+  .button_form_close:hover {
+    background-color: var(--bg-color);
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    box-shadow:  0 0 7px rgb(60, 150, 153),
+    0 0 42px rgb(74, 185, 189),
+    0 0 82px #81c9df;
+  }
+
   /*Модальное окно- Посмотреть кота*/
   .cardView_popup {
     background-color: rgba(0, 0, 0, 0.8);
@@ -272,30 +357,49 @@ a {
     left: 0;
     z-index: 100;
   }
+
+/* 
+  width: calc(100% - 40px);
+  max-width: 400px;
+  max-height: calc(100% - 40px);
+  overflow: hidden auto;
+  position: relative;
+  padding: 20px;
+  border: 1px solid dodgerblue;
+  border-radius: 6px;
+  background-color: #fff;
+  box-sizing: border-box; */
+
   .cardView {
-    position: absolute;
+    position: relative;
     top: 20%;
     left: 20%;
     z-index: 100;
-    width: 550px;
-    height: 500px;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    height: 700px;
     display: flex;
     flex-direction: row;
     border-radius: 20px;
-    padding: 15px;
+    padding: 20px;
+    border: 1px solid dodgerblue;
     color:#ffffff;
-    background-color: #23c788;
-    box-shadow:  0 0 7px #ffb3b3, 0 0 10px #ffb8b8,0 0 21px #ffa0a0;
+    background-color: #49b3dd3f;
+    box-shadow:  0 0 7px rgb(60, 150, 153),
+    0 0 42px rgb(74, 185, 189),
+    0 0 82px #81c9df;
   }
 
   .cardView_image {
-    width: 550px;
-    height: 450px;
-    margin-top: 20px;
-    background-size:contain;
-    background-position: center;
+    width: 100%;
+    border: 1px solid silver;
+    border-radius: 6px;
+    grid-row-start: 1;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
+    
   }
+
   .cardView_content {
     display: flex;
     flex-direction: column;
@@ -304,21 +408,25 @@ a {
     width: 250px;
     position: relative;
   }
+
   .card_name{
+    color: #07e4d9;
     font-size: 20px;
     font-weight: 700;
   }
+
   .card_description,
   .card_rate,
   .card_age{
     font-size: 16px;
     font-style: italic;
   }
+
   .cardView_exit {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-image: url('images/close.gif');
+    background-image: url('images/close.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -327,6 +435,16 @@ a {
     right: -35px;
     cursor: pointer;
     z-index: 100;
+  }
+
+  .cardView_exit:hover {
+    background-color: var(--bg-color);
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    box-shadow:  0 0 7px rgb(60, 150, 153),
+    0 0 42px rgb(74, 185, 189),
+    0 0 82px #81c9df;
   }
 
   /*подвал*/
@@ -372,5 +490,14 @@ a {
     margin: 0;
   }
 
+  .classgit:hover {
+    background-color: var(--bg-color);
+    cursor: pointer;
+    border-radius: 60%;
+    color: #fff;
+    box-shadow:  0 0 7px rgb(193, 199, 199),
+    0 0 42px rgb(223, 230, 230),
+    0 0 82px #eef1f1;
+  }
 
 
